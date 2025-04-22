@@ -10,14 +10,15 @@ public class TestBuilder : MonoBehaviour
     public static void BuildTest()
     {
         BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions();
-        List<string> scenes = new List<string>();
-        foreach(var scene in EditorBuildSettings.scenes)
-        {
-            if(!scene.enabled) continue;
-            scenes.Add(scene.path);
-        }
+        //List<string> scenes = new List<string>();
+        //foreach(var scene in EditorBuildSettings.scenes)
+        //{
+        //    if(!scene.enabled) continue;
+        //    scenes.Add(scene.path);
+        //}
 
-        buildPlayerOptions.scenes = scenes.ToArray();
+
+        buildPlayerOptions.scenes = new[] { "Assets/Scenes/Main.unity" };
         buildPlayerOptions.locationPathName = "Build/Test_Window.exe";
         buildPlayerOptions.target = BuildTarget.StandaloneWindows;
         buildPlayerOptions.options = BuildOptions.None;
