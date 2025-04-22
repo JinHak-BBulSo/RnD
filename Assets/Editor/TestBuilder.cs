@@ -7,7 +7,7 @@ using System.Collections.Generic;
 public class TestBuilder : MonoBehaviour
 {
     [MenuItem("Build/BuildTest_Window")]
-    public static void BuildTest()
+    static public void BuildTest()
     {
         BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions();
         //List<string> scenes = new List<string>();
@@ -20,6 +20,7 @@ public class TestBuilder : MonoBehaviour
 
         buildPlayerOptions.scenes = new[] { "Assets/Scenes/Main.unity" };
         buildPlayerOptions.locationPathName = "Build/Test_Window.exe";
+        Debug.Log(buildPlayerOptions.locationPathName);
         buildPlayerOptions.target = BuildTarget.StandaloneWindows64;
         buildPlayerOptions.options = BuildOptions.None;
 
