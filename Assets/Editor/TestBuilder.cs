@@ -20,7 +20,7 @@ public class TestBuilder : MonoBehaviour
 
         buildPlayerOptions.scenes = new[] { "Assets/Scenes/Main.unity" };
         buildPlayerOptions.locationPathName = "Build/Test_Window.exe";
-        buildPlayerOptions.target = BuildTarget.StandaloneWindows;
+        buildPlayerOptions.target = BuildTarget.StandaloneWindows64;
         buildPlayerOptions.options = BuildOptions.None;
 
         BuildReport report = BuildPipeline.BuildPlayer(buildPlayerOptions);
@@ -29,11 +29,13 @@ public class TestBuilder : MonoBehaviour
         if(summary.result == BuildResult.Succeeded)
         {
             Debug.Log("Build succeeded");
+            System.Console.WriteLine("Build succeeded");
         }
 
         if(summary.result == BuildResult.Failed)
         {
             Debug.Log("Build fail");
+            System.Console.WriteLine("Build fail");
         }
     }
 }
