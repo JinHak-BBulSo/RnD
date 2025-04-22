@@ -4,10 +4,9 @@ using UnityEditor.Build.Reporting;
 using System.Collections;
 using System.Collections.Generic;
 
-public class TestBuilder : MonoBehaviour
+public class TestBuilder
 {
-    [MenuItem("Build/BuildTest_Window")]
-    static public void BuildTest()
+    static void BuildTest()
     {
         BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions();
         //List<string> scenes = new List<string>();
