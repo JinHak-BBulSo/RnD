@@ -6,6 +6,7 @@ using System.Collections.Generic;
 
 public class TestBuilder
 {
+    [MenuItem("Build/JenkinsTest")]
     public static void BuildTest()
     {
         BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions();
@@ -18,7 +19,7 @@ public class TestBuilder
 
 
         buildPlayerOptions.scenes = new[] { "Assets/Scenes/Main.unity" };
-        buildPlayerOptions.locationPathName = "C:/Users/JHKIM/.jenkins/workspace/RnD/Build/Test_Window.exe";
+        buildPlayerOptions.locationPathName = "Build/Test_Window.exe";
         Debug.Log(buildPlayerOptions.locationPathName);
         buildPlayerOptions.target = BuildTarget.StandaloneWindows64;
         buildPlayerOptions.options = BuildOptions.None;
